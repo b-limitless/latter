@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cover Letter Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Cover Letter Generator</h2>
+        
+        <label class="label">Position:</label>
+        <input type="text" id="positionInput" placeholder="Enter job title" value="Backend Engineer" />
+
+        <label class="label">Key Skills:</label>
+        <textarea id="skillsInput" rows="3" placeholder="Enter skills">TypeScript, AWS, Security, System Design and architecture, CIC/CD</textarea>
+
+        <h3>Generated Cover Letter</h3>
+        <div id="coverLetter">
+            <p>Dear Recruiting Team,</p>
+            <p>
+                I am writing to express my strong interest in <span id="position">Backend Engineer</span>. Upon reviewing the job advertisement, I was thrilled to find that my 12 years of experience as a successful Senior Software Engineer align perfectly with the skills and qualifications you are seeking.
+            </p>
+            <p>
+                In my career, I have honed my expertise in <span id="skills">TypeScript, AWS, Security, System Design and architecture, CIC/CD</span>. These skills, combined with my Bachelor's Degree, have empowered me to deliver high-quality solutions while ensuring efficient and scalable web applications.
+            </p>
+            <p>
+                What truly sets me apart is my genuine passion for learning and staying up-to-date with emerging technologies. I am constantly seeking opportunities to enhance my skills and apply innovative approaches to deliver exceptional results.
+            </p>
+            <p>
+                Thank you for considering my application. I would be thrilled to have the opportunity to discuss further how I can make a positive impact on your team.
+            </p>
+            <p>
+                Please do not hesitate to contact me at your convenience.
+            </p>
+            <p>Warm regards,</p>
+            <p><strong>Bharat Shah</strong></p>
+            <p>
+                <a href="https://www.linkedin.com/in/bharat-shah-3150b478/">LinkedIn</a> |
+                <a href="https://github.com/b-limitless">GitHub</a> |
+                <a href="mailto:bharatrose1@gmail.com">bharatrose1@gmail.com</a> |
+                +971 565 973 854
+            </p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("positionInput").addEventListener("input", function() {
+            document.getElementById("position").innerText = this.value;
+        });
+
+        document.getElementById("skillsInput").addEventListener("input", function() {
+            document.getElementById("skills").innerText = this.value;
+        });
+    </script>
+</body>
+</html>
