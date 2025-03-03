@@ -1,84 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cover Letter Generator</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 20px;
-            background: #f8f9fa;
-        }
-        .container {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-        .label {
-            font-weight: bold;
-            margin-top: 10px;
-            display: block;
-        }
+        body { font-family: Arial, sans-serif; margin: 20px; padding: 20px; max-width: 800px; }
+        input, textarea { width: 100%; margin: 10px 0; padding: 8px; font-size: 16px; }
+        .container { border: 1px solid #ccc; padding: 20px; border-radius: 10px; background: #f9f9f9; }
     </style>
 </head>
 <body>
+
+    <h2>Cover Letter Generator</h2>
+
+    <label for="position">Position:</label>
+    <input type="text" id="position" placeholder="Enter job title (e.g., Senior Software Architect)" oninput="updateLetter()">
+
+    <label for="skills">Skills:</label>
+    <textarea id="skills" placeholder="Enter skills (e.g., TypeScript, AWS, Security, etc.)" oninput="updateLetter()"></textarea>
+
     <div class="container">
-        <h2>Cover Letter Generator</h2>
-        
-        <label class="label">Position:</label>
-        <input type="text" id="positionInput" placeholder="Enter job title" value="Backend Engineer" />
-
-        <label class="label">Key Skills:</label>
-        <textarea id="skillsInput" rows="3" placeholder="Enter skills">TypeScript, AWS, Security, System Design and architecture, CIC/CD</textarea>
-
         <h3>Generated Cover Letter</h3>
-        <div id="coverLetter">
-            <p>Dear Recruiting Team,</p>
-            <p>
-                I am writing to express my strong interest in <span id="position">Backend Engineer</span>. Upon reviewing the job advertisement, I was thrilled to find that my 12 years of experience as a successful Senior Software Engineer align perfectly with the skills and qualifications you are seeking.
-            </p>
-            <p>
-                In my career, I have honed my expertise in <span id="skills">TypeScript, AWS, Security, System Design and architecture, CIC/CD</span>. These skills, combined with my Bachelor's Degree, have empowered me to deliver high-quality solutions while ensuring efficient and scalable web applications.
-            </p>
-            <p>
-                What truly sets me apart is my genuine passion for learning and staying up-to-date with emerging technologies. I am constantly seeking opportunities to enhance my skills and apply innovative approaches to deliver exceptional results.
-            </p>
-            <p>
-                Thank you for considering my application. I would be thrilled to have the opportunity to discuss further how I can make a positive impact on your team.
-            </p>
-            <p>
-                Please do not hesitate to contact me at your convenience.
-            </p>
-            <p>Warm regards,</p>
-            <p><strong>Bharat Shah</strong></p>
-            <p>
-                <a href="https://www.linkedin.com/in/bharat-shah-3150b478/">LinkedIn</a> |
-                <a href="https://github.com/b-limitless">GitHub</a> |
-                <a href="mailto:bharatrose1@gmail.com">bharatrose1@gmail.com</a> |
-                +971 565 973 854
-            </p>
-        </div>
+        <p>Dear Recruiting Team,</p>
+        <p>
+            I am writing to express my strong interest in 
+            <span id="job-title">[Position]</span>. 
+            Upon reviewing the job advertisement, I was thrilled to find that my 12 years of experience as a successful Senior Software Engineer align perfectly with the skills and qualifications you are seeking.
+        </p>
+        <p>
+            In my career, I have honed my expertise in a range of 
+            <span id="job-skills">[Skills]</span>.
+        </p>
+        <p>
+            These skills, combined with my Bachelor's Degree, have empowered me to deliver high-quality solutions while ensuring efficient and scalable web applications.
+        </p>
+        <p>
+            What truly sets me apart is my genuine passion for learning and staying up-to-date with emerging technologies. I am constantly seeking opportunities to enhance my skills and apply innovative approaches to deliver exceptional results.
+        </p>
+        <p>
+            Throughout my career, I have demonstrated a strong commitment to delivering sustainable and impactful outcomes. I thrive in dynamic, fast-paced settings, and my ability to quickly adapt to changing requirements has been instrumental in driving successful results.
+        </p>
+        <p>
+            I am excited about the prospect of contributing my skills and experience to your company. I believe that a thorough discussion will help showcase how my capabilities align with your needs.
+        </p>
+        <p>
+            Thank you for considering my application. I would be thrilled to have the opportunity to discuss further how I can make a positive impact on your team and contribute to your company's growth.
+        </p>
+        <p>
+            Warm regards,<br>
+            Bharat Shah<br>
+            <a href="https://www.linkedin.com/in/bharat-shah-3150b478/" target="_blank">LinkedIn</a> | 
+            <a href="https://github.com/b-limitless" target="_blank">GitHub</a><br>
+            bharatrose1@gmail.com<br>
+            +971 565 973 854
+        </p>
     </div>
 
     <script>
-        document.getElementById("positionInput").addEventListener("input", function() {
-            document.getElementById("position").innerText = this.value;
-        });
-
-        document.getElementById("skillsInput").addEventListener("input", function() {
-            document.getElementById("skills").innerText = this.value;
-        });
+        function updateLetter() {
+            document.getElementById("job-title").innerText = document.getElementById("position").value || "[Position]";
+            document.getElementById("job-skills").innerText = document.getElementById("skills").value || "[Skills]";
+        }
     </script>
+
 </body>
 </html>
